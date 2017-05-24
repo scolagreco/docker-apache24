@@ -1,4 +1,5 @@
 FROM scolagreco/docker-alpine:v3.5
+MAINTAINER Stefano Colagreco <stefano@colagreco.it>
 
 ENV HTTPD_PREFIX /usr/local/apache2
 ENV PATH $HTTPD_PREFIX/bin:$PATH
