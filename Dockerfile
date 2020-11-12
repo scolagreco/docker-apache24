@@ -1,4 +1,4 @@
-FROM scolagreco/docker-alpine:v3.5
+FROM scolagreco/alpine-base:v3.12.1
 MAINTAINER Stefano Colagreco <stefano@colagreco.it>
 
 ENV HTTPD_PREFIX /usr/local/apache2
@@ -6,7 +6,7 @@ ENV PATH $HTTPD_PREFIX/bin:$PATH
 
 WORKDIR $HTTPD_PREFIX
 
-ENV HTTPD_VERSION 2.4.25
+ENV HTTPD_VERSION 2.4.46
 
 COPY httpd.tar.bz2 .
 
@@ -27,8 +27,8 @@ RUN set -x \
 		gnupg \
 		libc-dev \
 		# mod_session_crypto
-		libressl \
-		libressl-dev \
+		openssl \
+		openssl-dev \
 		# mod_proxy_html mod_xml2enc
 		libxml2-dev \
 		# mod_lua
