@@ -50,6 +50,7 @@ RUN set -x \
 		--prefix="$HTTPD_PREFIX" \
 		--with-mpm=event \
 		--enable-mods-shared=reallyall \
+		--enable-cgid \
 	&& make -j "$(getconf _NPROCESSORS_ONLN)" \
 	&& make install \
 	\
