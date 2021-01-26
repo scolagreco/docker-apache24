@@ -69,7 +69,7 @@ RUN set -x \
 			| xargs -r apk info --installed \
 			| sort -u \
 	)" \
-	&& apk add --virtual .httpd-rundeps $runDeps \
+	&& apk add --virtual .httpd-rundeps $runDeps perl-fcgi \
 	&& apk del .build-deps
 
 COPY httpd-foreground /usr/local/bin/
