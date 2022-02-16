@@ -1,4 +1,4 @@
-FROM scolagreco/alpine-base:v3.12.1
+FROM scolagreco/alpine-base:v3.15.0
 MAINTAINER Stefano Colagreco <stefano@colagreco.it>
 
 ENV HTTPD_PREFIX /usr/local/apache2
@@ -11,10 +11,10 @@ ENV HTTPD_VERSION 2.4.52
 COPY httpd.tar.bz2 .
 
 RUN set -x \
-        && addgroup -g 82 -S www-data \
-        && adduser -u 82 -D -S -G www-data www-data \
-	&& mkdir -p "$HTTPD_PREFIX" \
-        && chown www-data:www-data "$HTTPD_PREFIX" \
+        && addgroup -g 48 -S apache \
+        && adduser -u 48 -D -S -G apache apache \
+        && mkdir -p "$HTTPD_PREFIX" \
+        && chown apache:apache "$HTTPD_PREFIX" \
 	&& runDeps=' \
 		apr-dev \
 		apr-util-dev \
