@@ -1,4 +1,4 @@
-FROM scolagreco/alpine-base:v3.15.0
+FROM scolagreco/alpine-base:v3.16.2
 MAINTAINER Stefano Colagreco <stefano@colagreco.it>
 
 ENV HTTPD_PREFIX /usr/local/apache2
