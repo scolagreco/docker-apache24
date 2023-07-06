@@ -6,7 +6,7 @@ ENV PATH $HTTPD_PREFIX/bin:$PATH
 
 WORKDIR $HTTPD_PREFIX
 
-ENV HTTPD_VERSION 2.4.52
+ENV HTTPD_VERSION 2.4.54
 
 COPY httpd.tar.bz2 .
 
@@ -51,6 +51,8 @@ RUN set -x \
 		--with-mpm=event \
 		--enable-mods-shared=reallyall \
 		--enable-cgid \
+		--enable-ldap=shared \
+                --enable-lua=shared \
 	&& make -j "$(getconf _NPROCESSORS_ONLN)" \
 	&& make install \
 	\
