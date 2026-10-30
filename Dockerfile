@@ -1,4 +1,4 @@
-FROM scolagreco/alpine-base:v3.16.2
+FROM scolagreco/alpine-base:v3.24.3
 
 RUN set -x \
 	&& apk update \
@@ -13,7 +13,7 @@ ENTRYPOINT ["httpd-foreground"]
 
 # Metadata params
 ARG BUILD_DATE
-ARG VERSION="2.4.56"
+ARG VERSION="2.4.69"
 ARG VCS_URL="https://github.com/scolagreco/docker-apache24.git"
 ARG VCS_REF
 
